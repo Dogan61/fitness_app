@@ -21,10 +21,8 @@ class SetFingerprintScreen extends StatelessWidget {
       final didAuthenticate = await localAuth.authenticate(
         localizedReason:
             'Please authenticate to continue', // İstersen bunu da constant’a alırız
-        options: const AuthenticationOptions(
-          biometricOnly: true,
-          stickyAuth: true,
-        ),
+        biometricOnly: true,
+        persistAcrossBackgrounding: true,
       );
 
       if (didAuthenticate) {

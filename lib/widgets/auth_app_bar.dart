@@ -1,4 +1,4 @@
-import 'package:fitness_app/core/constants/app_constants.dart';
+import 'package:fitness_app/core/extension/dart_extension.dart';
 import 'package:flutter/material.dart';
 
 class AuthAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -18,28 +18,19 @@ class AuthAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final iconColor = context.theme.appBarTheme.iconTheme?.color;
     return AppBar(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      scrolledUnderElevation: 0,
-      centerTitle: true,
       leading: showBack
           ? IconButton(
-              icon: const Icon(
+              icon: Icon(
                 Icons.arrow_left,
-                color: AppConstants.authAccent,
+                color: iconColor,
                 size: 40,
               ),
               onPressed: onBack ?? () => Navigator.of(context).maybePop(),
             )
           : null,
-      title: Text(
-        title,
-        style: const TextStyle(
-          color: AppConstants.authAccent,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+      title: Text(title),
     );
   }
 }
