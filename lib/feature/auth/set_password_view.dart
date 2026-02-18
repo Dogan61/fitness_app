@@ -1,8 +1,10 @@
 import 'package:fitness_app/core/constants/app_constants.dart';
-import 'package:fitness_app/widgets/auth_app_bar.dart';
-import 'package:fitness_app/widgets/auth_label.dart';
-import 'package:fitness_app/widgets/auth_text_field.dart';
+import 'package:fitness_app/core/route/router_constants.dart';
+import 'package:fitness_app/core/widgets/auth_app_bar.dart';
+import 'package:fitness_app/core/widgets/auth_label.dart';
+import 'package:fitness_app/core/widgets/auth_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SetPasswordView extends StatelessWidget {
   const SetPasswordView({super.key});
@@ -55,10 +57,9 @@ class SetPasswordView extends StatelessWidget {
 
           const SizedBox(height: 60),
 
-          // Reset Password Butonu
           ElevatedButton(
             onPressed: () {
-              // Şifre güncelleme işlemi
+              GoRouter.of(context).push(RouterConstants.setFingerprintView);
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF333333), // Koyu gri buton

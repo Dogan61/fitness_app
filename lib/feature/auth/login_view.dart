@@ -1,8 +1,9 @@
 import 'package:fitness_app/core/constants/app_constants.dart';
 import 'package:fitness_app/core/route/router_constants.dart';
-import 'package:fitness_app/widgets/auth_app_bar.dart';
-import 'package:fitness_app/widgets/auth_social_icon.dart';
-import 'package:fitness_app/widgets/auth_text_field.dart';
+import 'package:fitness_app/core/widgets/auth_app_bar.dart';
+import 'package:fitness_app/core/widgets/auth_social_icon.dart';
+import 'package:fitness_app/core/widgets/auth_text_field.dart';
+import 'package:fitness_app/core/widgets/custom_outlined_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -55,7 +56,7 @@ class LoginView extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   const AuthTextField(
-                    hintText: AppConstants.loginUsernameHint,
+                    hintText: AppConstants.loginEmailHint,
                   ),
                   const SizedBox(height: 20),
                   const Text(
@@ -73,10 +74,10 @@ class LoginView extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
-                      onPressed: () {
-                        GoRouter.of(
+                      onPressed: () async {
+                        await GoRouter.of(
                           context,
-                        ).push(RouterConstants.forgotPassword);
+                        ).push(RouterConstants.forgotPasswordView);
                       },
                       child: const Text(
                         AppConstants.loginForgotPassword,
@@ -90,24 +91,10 @@ class LoginView extends StatelessWidget {
 
             SizedBox(height: 24.h),
 
-            OutlinedButton(
-              onPressed: () {},
-              style: OutlinedButton.styleFrom(
-                side: const BorderSide(color: Colors.white60),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 80,
-                  vertical: 15,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
-              child: const Text(
-                AppConstants.loginButton,
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              ),
+            const CustomOutlinedButton(
+              text: AppConstants.loginButton,
+              //Todo    onTap: () => GoRouter.of(context).push(RouterConstants.homeView),
             ),
-
             SizedBox(height: 16.h),
             const Text(
               AppConstants.loginOrSignUpWith,
@@ -116,14 +103,14 @@ class LoginView extends StatelessWidget {
             SizedBox(height: 20.h),
 
             // Sosyal İkonlar
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const AuthSocialIcon(icon: Icons.g_mobiledata),
-                const SizedBox(width: 15),
-                const AuthSocialIcon(icon: Icons.facebook),
-                const SizedBox(width: 15),
-                const AuthSocialIcon(icon: Icons.fingerprint),
+                AuthSocialIcon(icon: Icons.g_mobiledata),
+                SizedBox(width: 15),
+                AuthSocialIcon(icon: Icons.facebook),
+                SizedBox(width: 15),
+                AuthSocialIcon(icon: Icons.fingerprint),
               ],
             ),
 
@@ -137,7 +124,7 @@ class LoginView extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () async {
-                    await GoRouter.of(context).push(RouterConstants.register);
+                    await GoRouter.of(context).push(RouterConstants.registerView);
                   },
                   child: const Text(
                     AppConstants.loginSignUp,
@@ -151,5 +138,4 @@ class LoginView extends StatelessWidget {
       ),
     );
   }
-
 }

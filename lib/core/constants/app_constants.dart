@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-/// Uygulama genelinde kullanılan ortak renk ve metin sabitleri
 class AppConstants {
   AppConstants._();
 
   // Colors
+  static const Color cBlack = Color(0xFF000000);
+  static const Color cWhite = Color(0xFFFFFFFF);
   static const Color authBackground = Color(0xFF1E1E1E);
-  static const Color authAccent = Color(0xFFE5F876);
+  static const Color authAccent = Color(0xFFE2F163);
   static const Color authPurple = Color(0xFFB4A7FB);
 
   // Auth common strings
@@ -18,7 +19,7 @@ class AppConstants {
   static const String loginWelcome = 'Welcome';
   static const String loginDescription = authLorem;
   static const String loginUsernameLabel = 'Username or email';
-  static const String loginUsernameHint = 'example@example.com';
+  static const String loginEmailHint = 'example@example.com';
   static const String loginPasswordLabel = 'Password';
   static const String loginPasswordHint = '**************';
   static const String loginButton = 'Log In';
@@ -26,6 +27,7 @@ class AppConstants {
   static const String loginOrSignUpWith = 'or sign up with';
   static const String loginDontHaveAccount = "Don't have an account? ";
   static const String loginSignUp = 'Sign Up';
+  static const String loginMobileHint = '+1 234 567 8900';
 
   // Register
   static const String registerTitle = 'Create Account';
@@ -67,7 +69,21 @@ class AppConstants {
       'Fingerprint is not available on this device.';
   static const String fingerprintAuthFailed =
       'Fingerprint authentication failed.';
-  static const String fingerprintAuthSuccess =
-      'Fingerprint set successfully.';
-}
+  static const String fingerprintAuthSuccess = 'Fingerprint set successfully.';
 
+  static const String setupTitle =
+      " Consistency Is The Key\nTo Progress. Don't Give Up! ";
+
+  static const String setupDescription =
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
+  static const String female = 'Female';
+  static const String male = 'Male';
+  static const String fillProfileTitle = 'Fill Your Profile';
+  static const String setupGoalTitle = 'Physical Activity Level';
+  static const String whatIsYourHeight = 'What is your height?';
+  static const String whatIsYourWeight = 'What is your weight?';
+  static const String howOldTitle = 'How old are you?';
+  static const String appBarDescription = "It's time to challenge your limits.";
+  static const String homeWelcome = 'Hi, Madison';
+}
