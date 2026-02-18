@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 class AuthAppBar extends StatelessWidget implements PreferredSizeWidget {
   const AuthAppBar({
-    super.key,
     required this.title,
+    super.key,
     this.showBack = true,
     this.onBack,
   });
@@ -34,4 +34,3 @@ class AuthAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 }
-

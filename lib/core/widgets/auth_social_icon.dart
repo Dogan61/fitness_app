@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:fitness_app/core/constants/app_constants.dart';
+import 'package:flutter/material.dart';
 
 class AuthSocialIcon extends StatelessWidget {
   const AuthSocialIcon({
-    super.key,
     required this.icon,
+    super.key,
   });
 
   final IconData icon;
@@ -22,4 +22,3 @@ class AuthSocialIcon extends StatelessWidget {
     );
   }
 }
-

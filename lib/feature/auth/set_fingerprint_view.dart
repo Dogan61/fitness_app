@@ -1,6 +1,9 @@
 import 'package:fitness_app/core/constants/app_constants.dart';
-import 'package:fitness_app/widgets/auth_app_bar.dart';
+import 'package:fitness_app/core/route/router_constants.dart';
+import 'package:fitness_app/core/widgets/auth_app_bar.dart';
+import 'package:fitness_app/core/widgets/custom_outlined_button.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:local_auth/local_auth.dart';
 
 class SetFingerprintScreen extends StatelessWidget {
@@ -77,49 +80,21 @@ class SetFingerprintScreen extends StatelessWidget {
               ),
             ),
           ),
+
           const SizedBox(height: 60),
-          _buildButton(
-            AppConstants.fingerprintSkip,
-            onPressed: () {
-              Navigator.of(context).maybePop();
+          CustomOutlinedButton(
+            text: AppConstants.fingerprintSkip,
+            onTap: () => {
+              GoRouter.of(context).push(RouterConstants.setupView),
             },
           ),
           const SizedBox(height: 20),
-          _buildButton(
-            AppConstants.fingerprintContinue,
-            onPressed: () => _authenticate(context),
+          CustomOutlinedButton(
+            text: AppConstants.fingerprintContinue,
+            onTap: () => _authenticate(context),
           ),
         ],
       ),
     );
   }
-
-  Widget _buildButton(
-    String text, {
-    required VoidCallback onPressed,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50),
-      child: OutlinedButton(
-        onPressed: onPressed,
-        style: OutlinedButton.styleFrom(
-          minimumSize: const Size(double.infinity, 55),
-          side: const BorderSide(color: Colors.white30, width: 1.5),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-          ),
-          backgroundColor: Colors.transparent,
-        ),
-        child: Text(
-          text,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    );
-  }
 }
-

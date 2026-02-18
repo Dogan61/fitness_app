@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class AuthTextField extends StatelessWidget {
   const AuthTextField({
-    super.key,
     required this.hintText,
+    super.key,
     this.isPassword = false,
   });
 
@@ -25,10 +25,9 @@ class AuthTextField extends StatelessWidget {
         ),
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 20,
-          vertical: 15,
+          vertical: 12,
         ),
       ),
     );
   }
 }
-

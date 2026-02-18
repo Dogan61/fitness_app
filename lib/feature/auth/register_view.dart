@@ -1,8 +1,9 @@
 import 'package:fitness_app/core/constants/app_constants.dart';
-import 'package:fitness_app/widgets/auth_app_bar.dart';
-import 'package:fitness_app/widgets/auth_label.dart';
-import 'package:fitness_app/widgets/auth_social_icon.dart';
-import 'package:fitness_app/widgets/auth_text_field.dart';
+import 'package:fitness_app/core/widgets/auth_app_bar.dart';
+import 'package:fitness_app/core/widgets/auth_label.dart';
+import 'package:fitness_app/core/widgets/auth_social_icon.dart';
+import 'package:fitness_app/core/widgets/auth_text_field.dart';
+import 'package:fitness_app/core/widgets/custom_outlined_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -37,7 +38,7 @@ class RegisterView extends StatelessWidget {
                 children: [
                   const AuthLabel(text: AppConstants.registerFullName),
                   const AuthTextField(
-                    hintText: AppConstants.loginUsernameHint,
+                    hintText: AppConstants.loginEmailHint,
                   ),
                   SizedBox(height: 15.h),
                   const AuthLabel(text: AppConstants.registerEmailOrPhone),
@@ -73,7 +74,7 @@ class RegisterView extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const TextSpan(text: ' and '),
+                    TextSpan(text: ' and '),
                     TextSpan(
                       text: AppConstants.registerPrivacyPolicy,
                       style: TextStyle(
@@ -90,28 +91,7 @@ class RegisterView extends StatelessWidget {
 
             SizedBox(height: 25.h),
 
-            // Sign Up Butonu
-            OutlinedButton(
-              onPressed: () {},
-              style: OutlinedButton.styleFrom(
-                side: const BorderSide(color: Colors.white60),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 80,
-                  vertical: 15,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
-              child: const Text(
-                AppConstants.registerButton,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+            const CustomOutlinedButton(text: AppConstants.registerButton),
 
             SizedBox(height: 20.h),
             const Text(
@@ -120,15 +100,14 @@ class RegisterView extends StatelessWidget {
             ),
             SizedBox(height: 15.h),
 
-            // Sosyal İkonlar
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const AuthSocialIcon(icon: Icons.g_mobiledata),
-                const SizedBox(width: 15),
-                const AuthSocialIcon(icon: Icons.facebook),
-                const SizedBox(width: 15),
-                const AuthSocialIcon(icon: Icons.fingerprint),
+                AuthSocialIcon(icon: Icons.g_mobiledata),
+                SizedBox(width: 15),
+                AuthSocialIcon(icon: Icons.facebook),
+                SizedBox(width: 15),
+                AuthSocialIcon(icon: Icons.fingerprint),
               ],
             ),
 
@@ -155,5 +134,4 @@ class RegisterView extends StatelessWidget {
       ),
     );
   }
-
 }
