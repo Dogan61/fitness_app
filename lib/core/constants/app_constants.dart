@@ -1,14 +1,15 @@
+import 'package:fitness_app/core/theme/app_color.dart';
 import 'package:flutter/material.dart';
 
 class AppConstants {
   AppConstants._();
 
-  // Colors
-  static const Color cBlack = Color(0xFF000000);
-  static const Color cWhite = Color(0xFFFFFFFF);
-  static const Color authBackground = Color(0xFF1E1E1E);
-  static const Color authAccent = Color(0xFFE2F163);
-  static const Color authPurple = Color(0xFFB4A7FB);
+  // Colors — use AppColor for new code; these are kept for backward compatibility
+  static const Color cBlack = AppColor.black;
+  static const Color cWhite = AppColor.white;
+  static const Color authBackground = AppColor.darkBackground;
+  static const Color authAccent = AppColor.green;
+  static const Color authPurple = AppColor.lightPurple;
 
   // Auth common strings
   static const String authLorem =
@@ -50,7 +51,7 @@ class AppConstants {
   static const String forgotPasswordDescription = authLorem;
   static const String forgotPasswordEnterEmail = 'Enter your email address';
   static const String forgotPasswordEmailHint = 'example@example.com';
-  static const String forgotPasswordContinue = 'Continue';
+  static const String continueTex = 'Continue';
 
   // Set password
   static const String setPasswordTitle = 'Set Password';
@@ -86,4 +87,5 @@ class AppConstants {
   static const String howOldTitle = 'How old are you?';
   static const String appBarDescription = "It's time to challenge your limits.";
   static const String homeWelcome = 'Hi, Madison';
+  static const String loseWeight = 'Lose Weight';
 }
