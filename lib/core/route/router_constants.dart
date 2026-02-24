@@ -15,4 +15,6 @@ class RouterConstants {
   static const String goalView = '/goal-view';
   static const String createProfileView = '/create-profile-view';
   static const String physicalActivityView = '/physical-activity-view';
+  static const String profileView = '/profile-view';
+  static const String favoritesView = '/favorites-view';
 }
